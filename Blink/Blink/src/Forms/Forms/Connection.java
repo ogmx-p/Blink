@@ -11,4 +11,5 @@ package Forms.Forms;
  */
 public class Connection {
     public String prueba;
+    public String Otraprueba;
 }
