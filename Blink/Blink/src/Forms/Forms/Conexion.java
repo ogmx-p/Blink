@@ -32,4 +32,12 @@ public class Conexion {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+    
+    public void CrearTabla (){
+        try{
+            
+        }catch (Exception e){
+            
+        }
+    }
 }
