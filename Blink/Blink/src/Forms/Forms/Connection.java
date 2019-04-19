@@ -1,9 +1,9 @@
 
 package Forms.Forms;
-
+import java.sql.*;
 /**
  *
- * @author marlo
+ * @author marulon
  */
 public class Connection {
     
