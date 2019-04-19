@@ -32,11 +32,9 @@ public class Login extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         Usuario = new javax.swing.JTextField();
         Contraseña = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        Sesion = new javax.swing.JLabel();
+        Aceptar = new javax.swing.JButton();
         Salir = new javax.swing.JButton();
         Min = new javax.swing.JButton();
-        Aceptar = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
@@ -51,8 +49,9 @@ public class Login extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(getPreferredSize());
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(493, 295));
+        setResizable(false);
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 formMouseDragged(evt);
@@ -63,7 +62,6 @@ public class Login extends javax.swing.JFrame {
                 formMousePressed(evt);
             }
         });
-        getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -71,25 +69,46 @@ public class Login extends javax.swing.JFrame {
 
         Usuario.setBackground(new java.awt.Color(204, 204, 204));
         Usuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Usuario.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Usuario.setBorder(null);
 
         Contraseña.setBackground(new java.awt.Color(204, 204, 204));
         Contraseña.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Contraseña.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Contraseña.setBorder(null);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel1.setText("¿No estas registrado?");
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Usuario)
+                    .addComponent(Contraseña))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-        Sesion.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        Sesion.setForeground(new java.awt.Color(0, 0, 255));
-        Sesion.setText("Haz click aqui");
-        Sesion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                SesionMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                SesionMouseReleased(evt);
+        Aceptar.setBackground(new java.awt.Color(255, 255, 255));
+        Aceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usreg.png"))); // NOI18N
+        Aceptar.setToolTipText("Iniciar sesion");
+        Aceptar.setBorder(null);
+        Aceptar.setBorderPainted(false);
+        Aceptar.setContentAreaFilled(false);
+        Aceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Aceptar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick.png"))); // NOI18N
+        Aceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AceptarActionPerformed(evt);
             }
         });
 
@@ -121,23 +140,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        Aceptar.setBackground(new java.awt.Color(255, 255, 255));
-        Aceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usreg.png"))); // NOI18N
-        Aceptar.setToolTipText("Aceptar y continuar");
-        Aceptar.setBorder(null);
-        Aceptar.setBorderPainted(false);
-        Aceptar.setContentAreaFilled(false);
-        Aceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Aceptar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick.png"))); // NOI18N
-        Aceptar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AceptarActionPerformed(evt);
-            }
-        });
-
         Cancelar.setBackground(new java.awt.Color(255, 255, 255));
         Cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usregno.png"))); // NOI18N
-        Cancelar.setToolTipText("Cancelar y volver atrás");
+        Cancelar.setToolTipText("Registrarse");
         Cancelar.setBorder(null);
         Cancelar.setBorderPainted(false);
         Cancelar.setContentAreaFilled(false);
@@ -149,71 +154,50 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Usuario)
-                    .addComponent(Contraseña)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Salir)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Min)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Aceptar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Cancelar)))
-                        .addGap(0, 33, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Salir, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Min, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Aceptar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Cancelar, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(Salir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Min)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addComponent(Cancelar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Aceptar)
+                        .addGap(8, 8, 8)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(107, 107, 107))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Cancelar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Aceptar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Min, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Salir, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 500, 300);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
         setLocationRelativeTo(null);
@@ -224,9 +208,9 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_AceptarActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
-        Inicio vent=new Inicio();
-        vent.setVisible(true);
-        this.dispose();
+    Reg vent=new Reg();
+    vent.setVisible(true);
+    this.dispose();
     }//GEN-LAST:event_CancelarActionPerformed
 
     private void MinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MinActionPerformed
@@ -244,17 +228,6 @@ public class Login extends javax.swing.JFrame {
     
     this.setLocation(x-xx, y-xy);
     }//GEN-LAST:event_formMouseDragged
-
-    private void SesionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SesionMousePressed
-    Sesion.setForeground(Color.red);
-    }//GEN-LAST:event_SesionMousePressed
-
-    private void SesionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SesionMouseReleased
-    Sesion.setForeground(Color.blue);
-    Reg vent=new Reg();
-    vent.setVisible(true);
-    this.dispose();
-    }//GEN-LAST:event_SesionMouseReleased
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         Salida salir=new Salida(this, true);
@@ -302,9 +275,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField Contraseña;
     private javax.swing.JButton Min;
     private javax.swing.JButton Salir;
-    private javax.swing.JLabel Sesion;
     private javax.swing.JTextField Usuario;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

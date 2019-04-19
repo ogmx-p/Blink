@@ -34,12 +34,12 @@ public class Reg extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToolBar1 = new javax.swing.JToolBar();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Minimizar = new javax.swing.JButton();
         Ayuda = new javax.swing.JButton();
         Salir4 = new javax.swing.JButton();
+        Minimizar1 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         Usuario = new javax.swing.JTextField();
         Email = new javax.swing.JTextField();
@@ -49,13 +49,8 @@ public class Reg extends javax.swing.JFrame {
         Registro_Tag = new javax.swing.JLabel();
         Contraseña2 = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
-        jPanel3 = new javax.swing.JPanel();
-        Ask = new javax.swing.JLabel();
-        Sesion = new javax.swing.JLabel();
         Aceptar = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
-
-        jToolBar1.setRollover(true);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -73,7 +68,6 @@ public class Reg extends javax.swing.JFrame {
         });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -119,6 +113,15 @@ public class Reg extends javax.swing.JFrame {
             }
         });
 
+        Minimizar1.setBackground(new java.awt.Color(255, 255, 255));
+        Minimizar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usuario.png"))); // NOI18N
+        Minimizar1.setToolTipText("Iniciar sesion");
+        Minimizar1.setBorder(null);
+        Minimizar1.setBorderPainted(false);
+        Minimizar1.setContentAreaFilled(false);
+        Minimizar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Minimizar1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -130,6 +133,10 @@ public class Reg extends javax.swing.JFrame {
                     .addComponent(Ayuda)
                     .addComponent(Salir4))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Minimizar1)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,85 +147,25 @@ public class Reg extends javax.swing.JFrame {
                 .addComponent(Minimizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Ayuda)
-                .addGap(0, 164, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Minimizar1)
+                .addGap(0, 26, Short.MAX_VALUE))
         );
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 121, 490);
-        jPanel1.add(jSeparator1);
-        jSeparator1.setBounds(130, 90, 314, 10);
 
         Usuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Usuario.setBorder(null);
-        jPanel1.add(Usuario);
-        Usuario.setBounds(130, 50, 314, 37);
 
         Email.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Email.setBorder(null);
-        jPanel1.add(Email);
-        Email.setBounds(130, 100, 314, 37);
-        jPanel1.add(jSeparator3);
-        jSeparator3.setBounds(130, 140, 314, 10);
-        jPanel1.add(jSeparator4);
-        jSeparator4.setBounds(130, 260, 314, 10);
 
         Contraseña1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Contraseña1.setBorder(null);
-        jPanel1.add(Contraseña1);
-        Contraseña1.setBounds(130, 160, 314, 37);
 
         Registro_Tag.setFont(new java.awt.Font("Segoe WP Black", 2, 24)); // NOI18N
         Registro_Tag.setText("REGISTRATE");
-        jPanel1.add(Registro_Tag);
-        Registro_Tag.setBounds(130, 10, 310, 30);
 
         Contraseña2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Contraseña2.setBorder(null);
-        jPanel1.add(Contraseña2);
-        Contraseña2.setBounds(130, 220, 314, 40);
-        jPanel1.add(jSeparator5);
-        jSeparator5.setBounds(130, 200, 314, 10);
-
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-
-        Ask.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Ask.setText("¿Ya tienes cuenta?");
-
-        Sesion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        Sesion.setForeground(new java.awt.Color(0, 0, 255));
-        Sesion.setText("Haz clic aqui para iniciar sesión");
-        Sesion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                SesionMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                SesionMouseReleased(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ask))
-                .addContainerGap(77, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Ask, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel3);
-        jPanel3.setBounds(120, 370, 340, 120);
 
         Aceptar.setBackground(new java.awt.Color(255, 255, 255));
         Aceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usreg.png"))); // NOI18N
@@ -227,14 +174,12 @@ public class Reg extends javax.swing.JFrame {
         Aceptar.setBorderPainted(false);
         Aceptar.setContentAreaFilled(false);
         Aceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Aceptar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick.png"))); // NOI18N
+        Aceptar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick largo.png"))); // NOI18N
         Aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AceptarActionPerformed(evt);
             }
         });
-        jPanel1.add(Aceptar);
-        Aceptar.setBounds(140, 270, 101, 101);
 
         Cancelar.setBackground(new java.awt.Color(255, 255, 255));
         Cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usregno.png"))); // NOI18N
@@ -243,24 +188,76 @@ public class Reg extends javax.swing.JFrame {
         Cancelar.setBorderPainted(false);
         Cancelar.setContentAreaFilled(false);
         Cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Cancelar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick.png"))); // NOI18N
+        Cancelar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick largo.png"))); // NOI18N
         Cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(Cancelar);
-        Cancelar.setBounds(340, 270, 101, 101);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Registro_Tag, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Contraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Cancelar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Aceptar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(Registro_Tag, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(Contraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Cancelar))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -296,17 +293,6 @@ public class Reg extends javax.swing.JFrame {
     private void AyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AyudaActionPerformed
         JOptionPane.showMessageDialog(rootPane, "Para aceptar y terminar de click en el botón de continuar, para cancelar y volver al inicio de click en cancelar");
     }//GEN-LAST:event_AyudaActionPerformed
-
-    private void SesionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SesionMousePressed
-    Sesion.setForeground(Color.RED);
-    }//GEN-LAST:event_SesionMousePressed
-
-    private void SesionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SesionMouseReleased
-    Sesion.setForeground(Color.BLUE);
-    Login vent=new Login();
-    vent.setVisible(true);
-    this.dispose();
-    }//GEN-LAST:event_SesionMouseReleased
 
     private void Salir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salir4ActionPerformed
         Salida salir=new Salida(this, true);
@@ -350,28 +336,21 @@ public class Reg extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Aceptar;
-    private javax.swing.JLabel Ask;
     private javax.swing.JButton Ayuda;
     private javax.swing.JButton Cancelar;
     private javax.swing.JTextField Contraseña1;
     private javax.swing.JTextField Contraseña2;
     private javax.swing.JTextField Email;
     private javax.swing.JButton Minimizar;
+    private javax.swing.JButton Minimizar1;
     private javax.swing.JLabel Registro_Tag;
-    private javax.swing.JButton Salir;
-    private javax.swing.JButton Salir1;
-    private javax.swing.JButton Salir2;
-    private javax.swing.JButton Salir3;
     private javax.swing.JButton Salir4;
-    private javax.swing.JLabel Sesion;
     private javax.swing.JTextField Usuario;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }
