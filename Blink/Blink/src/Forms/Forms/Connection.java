@@ -10,10 +10,5 @@ package Forms.Forms;
  * @author marlo
  */
 public class Connection {
-    public String prueba;
-    public String Otraprueba;
     
-    
-    public String Marlonisgay;
-    public int marlonisgay;
 }
