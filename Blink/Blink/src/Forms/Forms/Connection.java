@@ -15,4 +15,5 @@ public class Connection {
     
     
     public String Marlonisgay;
+    public int marlonisgay;
 }
