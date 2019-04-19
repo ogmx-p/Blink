@@ -38,8 +38,8 @@ public class Reg extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Minimizar = new javax.swing.JButton();
-        Salir = new javax.swing.JButton();
         Ayuda = new javax.swing.JButton();
+        Salir4 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         Usuario = new javax.swing.JTextField();
         Email = new javax.swing.JTextField();
@@ -91,20 +91,6 @@ public class Reg extends javax.swing.JFrame {
             }
         });
 
-        Salir.setBackground(new java.awt.Color(255, 255, 255));
-        Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Salir.png"))); // NOI18N
-        Salir.setToolTipText("Salir");
-        Salir.setBorder(null);
-        Salir.setBorderPainted(false);
-        Salir.setContentAreaFilled(false);
-        Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Salir.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick.png"))); // NOI18N
-        Salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirActionPerformed(evt);
-            }
-        });
-
         Ayuda.setBackground(new java.awt.Color(255, 255, 255));
         Ayuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Ayuda.png"))); // NOI18N
         Ayuda.setToolTipText("Ayuda");
@@ -119,6 +105,20 @@ public class Reg extends javax.swing.JFrame {
             }
         });
 
+        Salir4.setBackground(new java.awt.Color(255, 255, 255));
+        Salir4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Salir.png"))); // NOI18N
+        Salir4.setToolTipText("Salir");
+        Salir4.setBorder(null);
+        Salir4.setBorderPainted(false);
+        Salir4.setContentAreaFilled(false);
+        Salir4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Salir4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick.png"))); // NOI18N
+        Salir4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Salir4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -127,24 +127,24 @@ public class Reg extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Minimizar)
-                    .addComponent(Salir)
-                    .addComponent(Ayuda))
+                    .addComponent(Ayuda)
+                    .addComponent(Salir4))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Salir)
+                .addComponent(Salir4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Minimizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Ayuda)
-                .addGap(0, 254, Short.MAX_VALUE))
+                .addGap(0, 164, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 121, 580);
+        jPanel2.setBounds(0, 0, 121, 490);
         jPanel1.add(jSeparator1);
         jSeparator1.setBounds(130, 90, 314, 10);
 
@@ -271,10 +271,6 @@ public class Reg extends javax.swing.JFrame {
         this.setState(ICONIFIED);
     }//GEN-LAST:event_MinimizarActionPerformed
 
-    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_SalirActionPerformed
-
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
      xy=evt.getY();
      xx=evt.getX();
@@ -311,6 +307,11 @@ public class Reg extends javax.swing.JFrame {
     vent.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_SesionMouseReleased
+
+    private void Salir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salir4ActionPerformed
+        Salida salir=new Salida(this, true);
+        salir.setVisible(true);
+    }//GEN-LAST:event_Salir4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -358,6 +359,10 @@ public class Reg extends javax.swing.JFrame {
     private javax.swing.JButton Minimizar;
     private javax.swing.JLabel Registro_Tag;
     private javax.swing.JButton Salir;
+    private javax.swing.JButton Salir1;
+    private javax.swing.JButton Salir2;
+    private javax.swing.JButton Salir3;
+    private javax.swing.JButton Salir4;
     private javax.swing.JLabel Sesion;
     private javax.swing.JTextField Usuario;
     private javax.swing.JPanel jPanel1;

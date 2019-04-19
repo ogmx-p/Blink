@@ -30,8 +30,8 @@ public class Ayuda extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Return = new javax.swing.JButton();
-        Salir = new javax.swing.JButton();
         Min = new javax.swing.JButton();
+        Salir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -58,20 +58,6 @@ public class Ayuda extends javax.swing.JFrame {
             }
         });
 
-        Salir.setBackground(new java.awt.Color(255, 255, 255));
-        Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Salir.png"))); // NOI18N
-        Salir.setToolTipText("Salir");
-        Salir.setBorder(null);
-        Salir.setBorderPainted(false);
-        Salir.setContentAreaFilled(false);
-        Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Salir.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick.png"))); // NOI18N
-        Salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirActionPerformed(evt);
-            }
-        });
-
         Min.setBackground(new java.awt.Color(255, 255, 255));
         Min.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Minimizar.png"))); // NOI18N
         Min.setToolTipText("Minimizar");
@@ -83,6 +69,20 @@ public class Ayuda extends javax.swing.JFrame {
         Min.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MinActionPerformed(evt);
+            }
+        });
+
+        Salir.setBackground(new java.awt.Color(255, 255, 255));
+        Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Salir.png"))); // NOI18N
+        Salir.setToolTipText("Salir");
+        Salir.setBorder(null);
+        Salir.setBorderPainted(false);
+        Salir.setContentAreaFilled(false);
+        Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Salir.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick.png"))); // NOI18N
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
             }
         });
 
@@ -98,8 +98,8 @@ public class Ayuda extends javax.swing.JFrame {
                         .addComponent(Return))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Salir)
-                            .addComponent(Min))
+                            .addComponent(Min)
+                            .addComponent(Salir))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -110,7 +110,7 @@ public class Ayuda extends javax.swing.JFrame {
                 .addComponent(Return)
                 .addGap(26, 26, 26)
                 .addComponent(Salir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Min)
                 .addContainerGap())
         );
@@ -154,7 +154,7 @@ public class Ayuda extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
                 .addContainerGap())
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -174,10 +174,6 @@ public class Ayuda extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_SalirActionPerformed
-
     private void MinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MinActionPerformed
         this.setState(ICONIFIED);
     }//GEN-LAST:event_MinActionPerformed
@@ -187,6 +183,11 @@ public class Ayuda extends javax.swing.JFrame {
     vent.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_ReturnActionPerformed
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        Salida salir=new Salida(this, true);
+        salir.setVisible(true);
+    }//GEN-LAST:event_SalirActionPerformed
 
     /**
      * @param args the command line arguments
