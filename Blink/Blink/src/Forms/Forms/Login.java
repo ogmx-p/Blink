@@ -19,7 +19,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         TextPrompt hold=new TextPrompt("Usuario", Usuario);
-        TextPrompt hold1=new TextPrompt("Contraseña", Contraseña);
+        TextPrompt hold1=new TextPrompt("Contraseña", Contra);
     }
 
     int xx,xy;
@@ -31,7 +31,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Usuario = new javax.swing.JTextField();
-        Contraseña = new javax.swing.JTextField();
+        Contra = new javax.swing.JPasswordField();
         Aceptar = new javax.swing.JButton();
         Salir = new javax.swing.JButton();
         Min = new javax.swing.JButton();
@@ -72,20 +72,19 @@ public class Login extends javax.swing.JFrame {
         Usuario.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Usuario.setBorder(null);
 
-        Contraseña.setBackground(new java.awt.Color(204, 204, 204));
-        Contraseña.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Contraseña.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Contraseña.setBorder(null);
+        Contra.setBackground(new java.awt.Color(204, 204, 204));
+        Contra.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Contra.setBorder(null);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Usuario)
-                    .addComponent(Contraseña))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Contra)
+                    .addComponent(Usuario))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -94,12 +93,12 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(Contra, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         Aceptar.setBackground(new java.awt.Color(255, 255, 255));
-        Aceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usreg.png"))); // NOI18N
+        Aceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Uslogin.png"))); // NOI18N
         Aceptar.setToolTipText("Iniciar sesion");
         Aceptar.setBorder(null);
         Aceptar.setBorderPainted(false);
@@ -141,7 +140,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         Cancelar.setBackground(new java.awt.Color(255, 255, 255));
-        Cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usregno.png"))); // NOI18N
+        Cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Uslogin2.png"))); // NOI18N
         Cancelar.setToolTipText("Registrarse");
         Cancelar.setBorder(null);
         Cancelar.setBorderPainted(false);
@@ -159,19 +158,18 @@ public class Login extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(Salir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Min)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Cancelar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Aceptar)
+                .addContainerGap(19, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(Salir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Min)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                        .addComponent(Cancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Aceptar)
-                        .addGap(8, 8, 8)))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -272,7 +270,7 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Aceptar;
     private javax.swing.JButton Cancelar;
-    private javax.swing.JTextField Contraseña;
+    private javax.swing.JPasswordField Contra;
     private javax.swing.JButton Min;
     private javax.swing.JButton Salir;
     private javax.swing.JTextField Usuario;
