@@ -200,7 +200,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Conectar)
                     .addComponent(Seleccion_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(408, Short.MAX_VALUE))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout Panel1Layout = new javax.swing.GroupLayout(Panel1);

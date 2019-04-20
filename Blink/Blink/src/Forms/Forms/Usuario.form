@@ -149,7 +149,7 @@
                           <Component id="Conectar" min="-2" max="-2" attributes="0"/>
                           <Component id="Seleccion_Usuario" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="408" max="32767" attributes="0"/>
+                      <EmptySpace pref="119" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
