@@ -28,16 +28,43 @@ public class Conexion {
                 con.close();
             }
             con = DriverManager.getConnection(URL);
-        } catch (Exception e) {
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }
     
     public void CrearTabla (){
         try{
-            
+            Consulta = "IF NOT EXISTS ";
         }catch (Exception e){
             
         }
+    }
+    
+    public void Guardar(Cliente cliente){
+        
+    }
+    
+    public void Guardar(Admin admin){
+        
+    }
+    
+    public int Escaner (String IP,String Contraseña,int Numero){ ///1-usuario, 0-admin, 2-error
+        int result = 0;
+        return result;
+    }
+    
+    public Cliente Modificar (String Nombre,String Contraseña){
+        Cliente result = null;
+        return result;
+    }
+    
+    public Admin Modificar (int Numero,String Contraseña){
+        Admin result = null;
+        return result;
+    }
+    
+    public void Sincronizacion (){
+        
     }
 }
