@@ -33,11 +33,27 @@ public class Conexion {
         }
     }
     
-    public void CrearTabla (){
+    public void CrearTablas (){
         try{
-            Consulta = "IF NOT EXISTS ";
-        }catch (Exception e){
+            //se crea la tabla Cliente si no existe
+            Consulta = "CREATE TABLE IF NOT EXISTS Cliente("
+                    + "Numero integer PRIMARY KEY AUTOINCREMENT, "
+                    + "IP text NOT NULL, "
+                    + "Nombre text NOT NULL, "
+                    + "Contraseña text NOT NULL"
+                    + ");";
+            inicio = con.createStatement();
+            inicio.execute(Consulta);
             
+            //se crea la tabla admin
+            Consulta = "CREATE TABLE IF NOT EXISTS Admin("
+                    + "Usuario integer PRIMARY KEY AUTOINCREMENT, "
+                    + "Contraseña text NOT NULL"
+                    + ");";
+            inicio = con.createStatement();
+            inicio.execute(Consulta);
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null, e);
         }
     }
     
