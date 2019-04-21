@@ -28,26 +28,19 @@ public class Conexion {
                 con.close();
             }
             con = DriverManager.getConnection(URL);
+            CrearTablas();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }
     
-    public void CrearTablas (){
+    private void CrearTablas (){
         try{
             //se crea la tabla Cliente si no existe
             Consulta = "CREATE TABLE IF NOT EXISTS Cliente("
                     + "Numero integer PRIMARY KEY AUTOINCREMENT, "
                     + "IP text NOT NULL, "
                     + "Nombre text NOT NULL, "
-                    + "Contraseña text NOT NULL"
-                    + ");";
-            inicio = con.createStatement();
-            inicio.execute(Consulta);
-            
-            //se crea la tabla admin
-            Consulta = "CREATE TABLE IF NOT EXISTS Admin("
-                    + "Usuario integer PRIMARY KEY AUTOINCREMENT, "
                     + "Contraseña text NOT NULL"
                     + ");";
             inicio = con.createStatement();
@@ -59,11 +52,7 @@ public class Conexion {
     
     public void Guardar(Cliente cliente){
         
-    }
-    
-    public void Guardar(Admin admin){
-        
-    }
+    }  
     
     public int Escaner (String IP,String Contraseña,int Numero){ ///1-usuario, 0-admin, 2-error
         int result = 0;
@@ -75,10 +64,6 @@ public class Conexion {
         return result;
     }
     
-    public Admin Modificar (int Numero,String Contraseña){
-        Admin result = null;
-        return result;
-    }
     
     public void Sincronizacion (){
         
