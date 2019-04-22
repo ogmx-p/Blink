@@ -95,6 +95,7 @@ public class Conexion {
             ResultSet r = Control.executeQuery();
             while (r.next()){
                 result.addItem(r.getString("Nombre"));
+                JOptionPane.showMessageDialog(null, "SE encontron un usuario");
             }
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e);

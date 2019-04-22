@@ -324,6 +324,7 @@ public class Reg extends javax.swing.JFrame {
                 cliente.Contraseña = Contraseña1.getText();
                 cliente.IP = direccion.getHostAddress();
                 cliente.Nombre = Usuario.getText();
+                Conexion.Datos.Guardar(cliente);
             }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
