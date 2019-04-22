@@ -120,8 +120,8 @@ public class Reg extends javax.swing.JFrame {
         Nocturno.setToolTipText("Modo Nocturno");
         Nocturno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Nocturno.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                NocturnoMousePressed(evt);
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NocturnoMouseClicked(evt);
             }
         });
 
@@ -349,17 +349,6 @@ public class Reg extends javax.swing.JFrame {
     this.dispose();
     }//GEN-LAST:event_Minimizar1ActionPerformed
 
-    private void NocturnoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NocturnoMousePressed
-    CambioColor JPanel1=new CambioColor(Panel1, 255, 255, 255);
-    CambioColor JPanel2=new CambioColor(Panel2, 230, 230, 230);
-    CambioColor JUsuario=new CambioColor(Usuario, 255, 255, 255);
-    CambioColor JContraseña1=new CambioColor(Contraseña1, 255, 255, 255);
-    CambioColor JContraseña2=new CambioColor(Contraseña2, 255, 255, 255);
-    CambioColor JUsuarioFuente=new CambioColor(Usuario, 1);
-    CambioColor JContraseña1Fuente=new CambioColor(Contraseña1, 1);
-    CambioColor JContraseña2Fuente=new CambioColor(Contraseña2, 1);
-    }//GEN-LAST:event_NocturnoMousePressed
-
     private void DiurnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DiurnoMouseClicked
     CambioColor JPanel1=new CambioColor(Panel1, 66, 66, 66);
     CambioColor JPanel2=new CambioColor(Panel2, 86, 86, 86);
@@ -369,6 +358,7 @@ public class Reg extends javax.swing.JFrame {
     CambioColor JUsuarioFuente=new CambioColor(Usuario, 2);
     CambioColor JContraseña1Fuente=new CambioColor(Contraseña1, 2);
     CambioColor JContraseña2Fuente=new CambioColor(Contraseña2, 2);
+
     }//GEN-LAST:event_DiurnoMouseClicked
 
     private void AceptarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AceptarMouseEntered
@@ -381,6 +371,18 @@ public class Reg extends javax.swing.JFrame {
     private void AceptarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AceptarMouseExited
     Aceptar.setEnabled(true);
     }//GEN-LAST:event_AceptarMouseExited
+
+    private void NocturnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NocturnoMouseClicked
+    CambioColor JPanel1=new CambioColor(Panel1, 255, 255, 255);
+    CambioColor JPanel2=new CambioColor(Panel2, 230, 230, 230);
+    CambioColor JUsuario=new CambioColor(Usuario, 255, 255, 255);
+    CambioColor JContraseña1=new CambioColor(Contraseña1, 255, 255, 255);
+    CambioColor JContraseña2=new CambioColor(Contraseña2, 255, 255, 255);
+    CambioColor JUsuarioFuente=new CambioColor(Usuario, 1);
+    CambioColor JContraseña1Fuente=new CambioColor(Contraseña1, 1);
+    CambioColor JContraseña2Fuente=new CambioColor(Contraseña2, 1);
+
+    }//GEN-LAST:event_NocturnoMouseClicked
 
     /**
      * @param args the command line arguments

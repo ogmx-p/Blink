@@ -225,7 +225,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="NocturnoMousePressed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="NocturnoMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Diurno">

@@ -75,10 +75,4 @@ public class CambioColor {
                 break;                
             }
         }
-
-    CambioColor(JLabel Registro_Tag, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-        
-    
 }
