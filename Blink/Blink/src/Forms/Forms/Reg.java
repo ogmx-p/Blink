@@ -31,11 +31,6 @@ public class Reg extends javax.swing.JFrame {
     private void initComponents() {
 
         Panel1 = new javax.swing.JPanel();
-        Panel2 = new javax.swing.JPanel();
-        Minimizar = new javax.swing.JButton();
-        Ayuda = new javax.swing.JButton();
-        Salir4 = new javax.swing.JButton();
-        Minimizar1 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         Usuario = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
@@ -47,9 +42,13 @@ public class Reg extends javax.swing.JFrame {
         Contraseña2 = new javax.swing.JPasswordField();
         Nocturno = new javax.swing.JLabel();
         Diurno = new javax.swing.JLabel();
+        Panel2 = new javax.swing.JPanel();
+        Minimizar = new javax.swing.JButton();
+        Ayuda = new javax.swing.JButton();
+        Salir4 = new javax.swing.JButton();
+        Minimizar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
         setMinimumSize(new java.awt.Dimension(460, 488));
         setUndecorated(true);
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -64,6 +63,76 @@ public class Reg extends javax.swing.JFrame {
         });
 
         Panel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        Usuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Usuario.setToolTipText("Ingrese su nombre de usuario aqui");
+        Usuario.setBorder(null);
+
+        Registro_Tag.setFont(new java.awt.Font("Segoe WP Black", 2, 24)); // NOI18N
+        Registro_Tag.setForeground(new java.awt.Color(230, 230, 230));
+        Registro_Tag.setText("REGISTRATE");
+
+        Aceptar.setBackground(new java.awt.Color(255, 255, 255));
+        Aceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usreg.png"))); // NOI18N
+        Aceptar.setToolTipText("Aceptar y continuar");
+        Aceptar.setBorder(null);
+        Aceptar.setBorderPainted(false);
+        Aceptar.setContentAreaFilled(false);
+        Aceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Aceptar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick largo.png"))); // NOI18N
+        Aceptar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AceptarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AceptarMouseExited(evt);
+            }
+        });
+        Aceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AceptarActionPerformed(evt);
+            }
+        });
+
+        Cancelar.setBackground(new java.awt.Color(255, 255, 255));
+        Cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usregno.png"))); // NOI18N
+        Cancelar.setToolTipText("Cancelar y volver atrás");
+        Cancelar.setBorder(null);
+        Cancelar.setBorderPainted(false);
+        Cancelar.setContentAreaFilled(false);
+        Cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Cancelar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick largo.png"))); // NOI18N
+        Cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarActionPerformed(evt);
+            }
+        });
+
+        Contraseña1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Contraseña1.setToolTipText("Ingrese su contraseña aqui");
+        Contraseña1.setBorder(null);
+
+        Contraseña2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Contraseña2.setToolTipText("Repita su contraseña");
+        Contraseña2.setBorder(null);
+
+        Nocturno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Modo nocturno.png"))); // NOI18N
+        Nocturno.setToolTipText("Modo Nocturno");
+        Nocturno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Nocturno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                NocturnoMousePressed(evt);
+            }
+        });
+
+        Diurno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Modo diurno.png"))); // NOI18N
+        Diurno.setToolTipText("Modo Diurno");
+        Diurno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Diurno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DiurnoMouseClicked(evt);
+            }
+        });
 
         Panel2.setBackground(new java.awt.Color(230, 230, 230));
 
@@ -150,142 +219,62 @@ public class Reg extends javax.swing.JFrame {
                 .addComponent(Ayuda)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Minimizar1)
-                .addGap(0, 26, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-
-        Usuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Usuario.setToolTipText("Ingrese su nombre de usuario aqui");
-        Usuario.setBorder(null);
-
-        Registro_Tag.setFont(new java.awt.Font("Segoe WP Black", 2, 24)); // NOI18N
-        Registro_Tag.setForeground(new java.awt.Color(230, 230, 230));
-        Registro_Tag.setText("REGISTRATE");
-
-        Aceptar.setBackground(new java.awt.Color(255, 255, 255));
-        Aceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usreg.png"))); // NOI18N
-        Aceptar.setToolTipText("Aceptar y continuar");
-        Aceptar.setBorder(null);
-        Aceptar.setBorderPainted(false);
-        Aceptar.setContentAreaFilled(false);
-        Aceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Aceptar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick largo.png"))); // NOI18N
-        Aceptar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                AceptarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                AceptarMouseExited(evt);
-            }
-        });
-        Aceptar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AceptarActionPerformed(evt);
-            }
-        });
-
-        Cancelar.setBackground(new java.awt.Color(255, 255, 255));
-        Cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usregno.png"))); // NOI18N
-        Cancelar.setToolTipText("Cancelar y volver atrás");
-        Cancelar.setBorder(null);
-        Cancelar.setBorderPainted(false);
-        Cancelar.setContentAreaFilled(false);
-        Cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Cancelar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick largo.png"))); // NOI18N
-        Cancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelarActionPerformed(evt);
-            }
-        });
-
-        Contraseña1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Contraseña1.setToolTipText("Ingrese su contraseña aqui");
-        Contraseña1.setBorder(null);
-
-        Contraseña2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Contraseña2.setToolTipText("Repita su contraseña");
-        Contraseña2.setBorder(null);
-
-        Nocturno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Modo nocturno.png"))); // NOI18N
-        Nocturno.setToolTipText("Modo Nocturno");
-        Nocturno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Nocturno.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                NocturnoMousePressed(evt);
-            }
-        });
-
-        Diurno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Modo diurno.png"))); // NOI18N
-        Diurno.setToolTipText("Modo Diurno");
-        Diurno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Diurno.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                DiurnoMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout Panel1Layout = new javax.swing.GroupLayout(Panel1);
         Panel1.setLayout(Panel1Layout);
         Panel1Layout.setHorizontalGroup(
             Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel1Layout.createSequentialGroup()
-                .addComponent(Panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
                 .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(Cancelar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Aceptar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(Panel1Layout.createSequentialGroup()
-                                    .addComponent(Registro_Tag, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Nocturno)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(Diurno))
-                                .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(Panel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Panel1Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(Panel1Layout.createSequentialGroup()
+                        .addComponent(Registro_Tag, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(Nocturno)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Panel1Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Contraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                        .addComponent(Diurno))
+                    .addComponent(Aceptar)
+                    .addComponent(Cancelar)
+                    .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(Contraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(Panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         Panel1Layout.setVerticalGroup(
             Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(Panel1Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Registro_Tag, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Diurno)
                     .addComponent(Nocturno))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Contraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
+                .addGap(58, 58, 58)
                 .addComponent(Aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Cancelar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Cancelar)
+                .addGap(11, 11, 11))
+            .addComponent(Panel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -79,10 +79,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="Aceptar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Nocturno" min="-2" max="-2" attributes="0"/>
-                      <Component id="Diurno" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="Diurno" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="Nocturno" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
@@ -98,18 +97,13 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="Panel2" max="32767" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="Nocturno" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Diurno" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Cancelar" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="Aceptar" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="Min" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="Salir" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="Cancelar" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="Aceptar" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="Min" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="Salir" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="Nocturno" min="-2" max="-2" attributes="0"/>
+                      <Component id="Diurno" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
