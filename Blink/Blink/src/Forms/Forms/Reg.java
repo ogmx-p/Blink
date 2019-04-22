@@ -158,6 +158,7 @@ public class Reg extends javax.swing.JFrame {
         Usuario.setBorder(null);
 
         Registro_Tag.setFont(new java.awt.Font("Segoe WP Black", 2, 24)); // NOI18N
+        Registro_Tag.setForeground(new java.awt.Color(230, 230, 230));
         Registro_Tag.setText("REGISTRATE");
 
         Aceptar.setBackground(new java.awt.Color(255, 255, 255));

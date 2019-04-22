@@ -31,7 +31,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Contra = new javax.swing.JPasswordField();
-        Usuario = new javax.swing.JComboBox<>();
+        Usuario = new javax.swing.JTextField();
         Aceptar = new javax.swing.JButton();
         Salir = new javax.swing.JButton();
         Min = new javax.swing.JButton();
@@ -71,9 +71,8 @@ public class Login extends javax.swing.JFrame {
         Contra.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Contra.setBorder(null);
 
-        Usuario.setEditable(true);
-        Usuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Usuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Usuario.setBackground(new java.awt.Color(204, 204, 204));
+        Usuario.setBorder(null);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -82,13 +81,13 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Usuario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Usuario)
                     .addComponent(Contra, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -272,7 +271,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField Contra;
     private javax.swing.JButton Min;
     private javax.swing.JButton Salir;
-    private javax.swing.JComboBox<String> Usuario;
+    private javax.swing.JTextField Usuario;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
