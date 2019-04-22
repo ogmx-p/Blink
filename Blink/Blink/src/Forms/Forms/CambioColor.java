@@ -3,6 +3,7 @@ package Forms.Forms;
 
 import java.awt.Color;
 import javax.swing.JComponent;
+import javax.swing.JLabel;
 import javax.swing.text.JTextComponent;
 
 /**
@@ -74,6 +75,10 @@ public class CambioColor {
                 break;                
             }
         }
+
+    CambioColor(JLabel Registro_Tag, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
         
     
 }
