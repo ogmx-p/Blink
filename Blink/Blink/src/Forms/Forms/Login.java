@@ -18,7 +18,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        TextPrompt hold=new TextPrompt("Usuario", Usuario);
+        Usuario = Conexion.Datos.BuscarClientesGuardados();
         TextPrompt hold1=new TextPrompt("Contraseña", Contra);
     }
 
@@ -30,8 +30,8 @@ public class Login extends javax.swing.JFrame {
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        Usuario = new javax.swing.JTextField();
         Contra = new javax.swing.JPasswordField();
+        Usuario = new javax.swing.JComboBox<>();
         Aceptar = new javax.swing.JButton();
         Salir = new javax.swing.JButton();
         Min = new javax.swing.JButton();
@@ -67,14 +67,13 @@ public class Login extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(230, 230, 230));
 
-        Usuario.setBackground(new java.awt.Color(204, 204, 204));
-        Usuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Usuario.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Usuario.setBorder(null);
-
         Contra.setBackground(new java.awt.Color(204, 204, 204));
         Contra.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Contra.setBorder(null);
+
+        Usuario.setEditable(true);
+        Usuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Usuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -83,8 +82,8 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Contra)
-                    .addComponent(Usuario))
+                    .addComponent(Usuario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Contra, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -273,7 +272,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField Contra;
     private javax.swing.JButton Min;
     private javax.swing.JButton Salir;
-    private javax.swing.JTextField Usuario;
+    private javax.swing.JComboBox<String> Usuario;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

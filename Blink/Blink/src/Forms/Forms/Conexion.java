@@ -2,6 +2,7 @@
 package Forms.Forms;
 import java.io.File;
 import java.sql.*;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 /**
  *
@@ -9,7 +10,7 @@ import javax.swing.JOptionPane;
  */
 public class Conexion {
     
-    public Conexion Datos = new Conexion();
+    public static Conexion Datos = new Conexion();
     private Connection con;
     private String URL = "jdbc:sqlite:C:\\Blink\\DataBase.db";
     private String Consulta;
@@ -63,19 +64,60 @@ public class Conexion {
             Control.setString(2,cliente.Nombre);
             Control.setString(3,cliente.Contraseña);
             Control.executeUpdate();
-        }catch (Exception e){
+        }catch (SQLException e){
             JOptionPane.showMessageDialog(null, e);
         }
     }  
     
-    public Cliente Buscar (){
+    public Cliente Buscar (String nombre, String contraseña){
         Cliente cliente = new Cliente();
+        try{
+            Consulta = "SELECT * FROM Cliente WHERE Nombre = ? AND Contraseña = ?";
+            Control = con.prepareStatement(Consulta);
+            Control.setString(1, nombre);
+            Control.setString(2, contraseña);
+            ResultSet result = Control.executeQuery();
+            cliente.Nombre = result.getString("Nombre");
+            cliente.Contraseña = result.getString("Contraseña");
+            cliente.IP = result.getString("IP");
+            cliente.numero = result.getInt("Numero");
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
         return cliente;
     }
     
-    public Cliente Modificar (String Nombre,String Contraseña){
-        Cliente result = null;
+    public JComboBox<String> BuscarClientesGuardados (){
+        JComboBox<String> result = new JComboBox<>();
+        try{
+            Consulta = "SELECT Nombre FROM Cliente";
+            Control = con.prepareStatement(Consulta);
+            ResultSet r = Control.executeQuery();
+            while (r.next()){
+                result.addItem(r.getString("Nombre"));
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
         return result;
+    }
+    
+    public void Modificar (Cliente cliente){
+        try{
+            Consulta = "UPDATE Cliente SET "
+                    + "Nombre = ?, "
+                    + "Contraseña = ?, "
+                    + "IP = ? "
+                    + "WHERE Numero = ?";
+            Control = con.prepareStatement(Consulta);
+            Control.setString(1, cliente.Nombre);
+            Control.setString(2, cliente.Contraseña);
+            Control.setString(3, cliente.IP);
+            Control.setInt(4, cliente.numero);
+            Control.executeUpdate();
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
     
     

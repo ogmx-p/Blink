@@ -6,6 +6,7 @@
 package Forms.Forms;
 
 import java.awt.Color;
+import java.net.InetAddress;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,7 +21,6 @@ public class Reg extends javax.swing.JFrame {
     public Reg() {
         initComponents();
         TextPrompt hold=new TextPrompt("Usuario", Usuario);
-        TextPrompt hold1=new TextPrompt("Email", Email);
         TextPrompt hold2=new TextPrompt("Contraseña", Contraseña1);
         TextPrompt hold3=new TextPrompt("Contraseña", Contraseña2);
     }
@@ -42,7 +42,6 @@ public class Reg extends javax.swing.JFrame {
         Minimizar1 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         Usuario = new javax.swing.JTextField();
-        Email = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         Registro_Tag = new javax.swing.JLabel();
@@ -161,10 +160,6 @@ public class Reg extends javax.swing.JFrame {
         Usuario.setToolTipText("Ingrese su nombre de usuario aqui");
         Usuario.setBorder(null);
 
-        Email.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Email.setToolTipText("Ingrese su email aqui");
-        Email.setBorder(null);
-
         Registro_Tag.setFont(new java.awt.Font("Segoe WP Black", 2, 24)); // NOI18N
         Registro_Tag.setText("REGISTRATE");
 
@@ -219,7 +214,6 @@ public class Reg extends javax.swing.JFrame {
                                     .addComponent(Registro_Tag, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -246,9 +240,7 @@ public class Reg extends javax.swing.JFrame {
                 .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
+                .addGap(40, 40, 40)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,7 +294,17 @@ public class Reg extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelarActionPerformed
 
     private void AceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarActionPerformed
-
+        Cliente cliente = new Cliente();
+        try{
+            if ((Contraseña1.getText()).equals(Contraseña2.getText())&&Usuario.getText()!=null){
+                InetAddress direccion = InetAddress.getLocalHost();
+                cliente.Contraseña = Contraseña1.getText();
+                cliente.IP = direccion.getHostAddress();
+                cliente.Nombre = Usuario.getText();
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_AceptarActionPerformed
 
     private void AyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AyudaActionPerformed
@@ -361,7 +363,6 @@ public class Reg extends javax.swing.JFrame {
     private javax.swing.JButton Cancelar;
     private javax.swing.JPasswordField Contraseña1;
     private javax.swing.JPasswordField Contraseña2;
-    private javax.swing.JTextField Email;
     private javax.swing.JButton Minimizar;
     private javax.swing.JButton Minimizar1;
     private javax.swing.JLabel Registro_Tag;
