@@ -30,8 +30,8 @@ public class Usuario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Nmb_Usuario = new javax.swing.JLabel();
         TXT1 = new javax.swing.JLabel();
+        Nocturnoi = new javax.swing.JLabel();
         Diurno = new javax.swing.JLabel();
-        Nocturno = new javax.swing.JLabel();
         Conectar = new javax.swing.JLabel();
         Nocturno2 = new javax.swing.JLabel();
         Diurno1 = new javax.swing.JLabel();
@@ -85,21 +85,21 @@ public class Usuario extends javax.swing.JFrame {
         TXT1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         TXT1.setText("Usuario:");
 
-        Diurno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Modo nocturno.png"))); // NOI18N
-        Diurno.setToolTipText("Modo Nocturno");
+        Nocturnoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Modo nocturno.png"))); // NOI18N
+        Nocturnoi.setToolTipText("Modo Nocturno");
+        Nocturnoi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Nocturnoi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NocturnoiMouseClicked(evt);
+            }
+        });
+
+        Diurno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Modo diurno.png"))); // NOI18N
+        Diurno.setToolTipText("Modo Diurno");
         Diurno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Diurno.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DiurnoMouseClicked(evt);
-            }
-        });
-
-        Nocturno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Modo diurno.png"))); // NOI18N
-        Nocturno.setToolTipText("Modo Diurno");
-        Nocturno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Nocturno.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                NocturnoMouseClicked(evt);
             }
         });
 
@@ -180,9 +180,9 @@ public class Usuario extends javax.swing.JFrame {
                     .addGroup(Panel2Layout.createSequentialGroup()
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Panel2Layout.createSequentialGroup()
-                                .addComponent(Diurno, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Nocturnoi, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Nocturno, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Diurno, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(Panel2Layout.createSequentialGroup()
                                 .addComponent(Busqueda_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -214,8 +214,8 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(Nocturno2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Diurno, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Nocturno, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Nocturnoi, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Diurno, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Busqueda_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -263,21 +263,21 @@ public class Usuario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void NocturnoiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NocturnoiMouseClicked
+    CambioColor JPanel1=new CambioColor(Panel1, 66, 66, 66);
+    CambioColor JPanel2=new CambioColor(Panel2, 86, 86, 86);
+    CambioColor JBusqueda=new CambioColor(Busqueda_Usuario,86,86,86);
+    CambioColor JBusquedaFuente=new CambioColor(Busqueda_Usuario, 2);
+    modo=true;
+    }//GEN-LAST:event_NocturnoiMouseClicked
+
     private void DiurnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DiurnoMouseClicked
-
-    }//GEN-LAST:event_DiurnoMouseClicked
-
-    private void NocturnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NocturnoMouseClicked
-    Panel1.setBackground(new java.awt.Color(255, 255, 255));
-    Panel2.setBackground(new java.awt.Color(230, 230, 230));
-    Busqueda_Usuario.setBackground(new java.awt.Color(255, 255, 255));
-    Busqueda_Usuario.setForeground(Color.black);
-    Seleccion_Usuario.setBackground(new java.awt.Color(255, 255, 255));
-    Seleccion_Usuario.setForeground(Color.black);
-    Nmb_Usuario.setForeground(Color.BLACK);
-    TXT1.setForeground(Color.BLACK);
+    CambioColor JPanel1=new CambioColor(Panel1, 255, 255, 255);
+    CambioColor JPanel2=new CambioColor(Panel2, 230, 230, 230);
+    CambioColor JBusqueda=new CambioColor(Busqueda_Usuario, 230,230,230);
+    CambioColor JBusquedaFuente=new CambioColor(Busqueda_Usuario, 1);
     modo=false;
-    }//GEN-LAST:event_NocturnoMouseClicked
+    }//GEN-LAST:event_DiurnoMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
     if(Busqueda_Usuario.getText().isEmpty())
@@ -443,8 +443,8 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JLabel Diurno;
     private javax.swing.JLabel Diurno1;
     private javax.swing.JLabel Nmb_Usuario;
-    private javax.swing.JLabel Nocturno;
     private javax.swing.JLabel Nocturno2;
+    private javax.swing.JLabel Nocturnoi;
     private javax.swing.JPanel Panel1;
     private javax.swing.JPanel Panel2;
     private javax.swing.JTextField Seleccion_Usuario;

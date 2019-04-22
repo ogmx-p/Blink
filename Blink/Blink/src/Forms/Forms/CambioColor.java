@@ -11,12 +11,17 @@ import javax.swing.text.JTextComponent;
  */
 public class CambioColor {
     
-    int r,g,b;
-    String ColorTxt;
+    int r,g,b,color;
     JComponent Componente;
     JTextComponent ComponenteTXT;
     
-        
+    /**
+     * Este cambia el color de un componente
+     * @param Componente componente
+     * @param r cantidad de rojo
+     * @param g cantidad de verde
+     * @param b cantidad de azul 
+     */    
     
         public CambioColor(JComponent Componente,int r,int g,int b)
         {
@@ -27,7 +32,13 @@ public class CambioColor {
             
             Componente.setBackground(new java.awt.Color(r,g,b));
         }
-        
+    /**
+     * Este cambia el color de un componente de texto
+     * @param ComponenteTXT componente de texto
+     * @param r cantidad de rojo
+     * @param g cantidad de verde
+     * @param b cantidad de azul
+     */
         public CambioColor(JTextComponent ComponenteTXT,int r,int g,int b)
         {
             this.ComponenteTXT=ComponenteTXT;
@@ -38,13 +49,31 @@ public class CambioColor {
             ComponenteTXT.setBackground(new java.awt.Color(r, g, b));
 
         }
-        
-        public CambioColor(JTextComponent ComponenteTXT,String ColorTxt)
+    /**
+     * Este cambia el color del texto de un componente de texto
+     * @param ComponenteTXT componente de texto
+     * @param color si es 1 se cambiara al color blanco 2 es negro 3 es rojo 4 es azul 5 es verde
+     */
+        public CambioColor(JTextComponent ComponenteTXT,int color)
         {
-            this.ColorTxt=ColorTxt;
             this.ComponenteTXT=ComponenteTXT;
+            this.color=color;
             
-            ComponenteTXT.setForeground(Color.getColor(ColorTxt));
+            switch(color){
+                case 1:
+                ComponenteTXT.setForeground(Color.BLACK);
+                break;
+                case 2:
+                ComponenteTXT.setForeground(Color.WHITE);
+                break;
+                case 3:
+                ComponenteTXT.setForeground(Color.RED);
+                break;
+                case 4:
+                ComponenteTXT.setForeground(Color.BLUE);
+                break;                
+            }
         }
+        
     
 }

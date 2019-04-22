@@ -96,9 +96,9 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="Diurno" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="Nocturnoi" min="-2" pref="38" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="Nocturno" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="Diurno" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="Busqueda_Usuario" min="-2" pref="385" max="-2" attributes="0"/>
@@ -143,8 +143,8 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Diurno" min="-2" pref="38" max="-2" attributes="0"/>
-                          <Component id="Nocturno" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="Nocturnoi" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="Diurno" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -216,7 +216,7 @@
                 <Property name="text" type="java.lang.String" value="Usuario:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="Diurno">
+            <Component class="javax.swing.JLabel" name="Nocturnoi">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Interfaz_Avanzada/Modo nocturno.png"/>
@@ -227,10 +227,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="DiurnoMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="NocturnoiMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="Nocturno">
+            <Component class="javax.swing.JLabel" name="Diurno">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Interfaz_Avanzada/Modo diurno.png"/>
@@ -241,7 +241,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="NocturnoMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="DiurnoMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="Conectar">

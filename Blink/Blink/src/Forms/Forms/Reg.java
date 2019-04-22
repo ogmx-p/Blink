@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author pc
+ * @author Pipo
  */
 public class Reg extends javax.swing.JFrame {
 
@@ -340,9 +340,9 @@ public class Reg extends javax.swing.JFrame {
     CambioColor JUsuario=new CambioColor(Usuario, 255, 255, 255);
     CambioColor JContraseña1=new CambioColor(Contraseña1, 255, 255, 255);
     CambioColor JContraseña2=new CambioColor(Contraseña2, 255, 255, 255);
-    CambioColor JUsuarioFuente=new CambioColor(Usuario, "BLACK");
-    CambioColor JContraseña1Fuente=new CambioColor(Contraseña1, "BLACK");
-    CambioColor JContraseña2Fuente=new CambioColor(Contraseña2, "BLACK");
+    CambioColor JUsuarioFuente=new CambioColor(Usuario, 1);
+    CambioColor JContraseña1Fuente=new CambioColor(Contraseña1, 1);
+    CambioColor JContraseña2Fuente=new CambioColor(Contraseña2, 1);
     }//GEN-LAST:event_NocturnoMousePressed
 
     private void DiurnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DiurnoMouseClicked
@@ -351,9 +351,9 @@ public class Reg extends javax.swing.JFrame {
     CambioColor JUsuario=new CambioColor(Usuario, 66, 66, 66);
     CambioColor JContraseña1=new CambioColor(Contraseña1, 66, 66, 66);
     CambioColor JContraseña2=new CambioColor(Contraseña2, 66, 66, 66);
-    CambioColor JUsuarioFuente=new CambioColor(Usuario, "WHITE");
-    CambioColor JContraseña1Fuente=new CambioColor(Contraseña1, "WHITE");
-    CambioColor JContraseña2Fuente=new CambioColor(Contraseña2, "WHITE");
+    CambioColor JUsuarioFuente=new CambioColor(Usuario, 2);
+    CambioColor JContraseña1Fuente=new CambioColor(Contraseña1, 2);
+    CambioColor JContraseña2Fuente=new CambioColor(Contraseña2, 2);
     }//GEN-LAST:event_DiurnoMouseClicked
 
     /**
