@@ -20,7 +20,6 @@ public class Reg extends javax.swing.JFrame {
     public Reg() {
         initComponents();
         TextPrompt hold=new TextPrompt("Usuario", Usuario);
-        TextPrompt hold1=new TextPrompt("Email", Email);
         TextPrompt hold2=new TextPrompt("Contraseña", Contraseña1);
         TextPrompt hold3=new TextPrompt("Contraseña", Contraseña2);
     }
