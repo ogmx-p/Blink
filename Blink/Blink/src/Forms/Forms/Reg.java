@@ -169,6 +169,14 @@ public class Reg extends javax.swing.JFrame {
         Aceptar.setContentAreaFilled(false);
         Aceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Aceptar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick largo.png"))); // NOI18N
+        Aceptar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AceptarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AceptarMouseExited(evt);
+            }
+        });
         Aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AceptarActionPerformed(evt);
@@ -371,6 +379,17 @@ public class Reg extends javax.swing.JFrame {
     CambioColor JContraseña1Fuente=new CambioColor(Contraseña1, 2);
     CambioColor JContraseña2Fuente=new CambioColor(Contraseña2, 2);
     }//GEN-LAST:event_DiurnoMouseClicked
+
+    private void AceptarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AceptarMouseEntered
+    if((Usuario.getText().isEmpty()||Contraseña1.getText().isEmpty()||Contraseña2.getText().isEmpty()) && Contraseña1.getText().equals(Contraseña2.getText()))
+    {
+     Aceptar.setEnabled(false);
+    }
+    }//GEN-LAST:event_AceptarMouseEntered
+
+    private void AceptarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AceptarMouseExited
+    Aceptar.setEnabled(true);
+    }//GEN-LAST:event_AceptarMouseExited
 
     /**
      * @param args the command line arguments
