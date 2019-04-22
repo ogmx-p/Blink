@@ -40,7 +40,7 @@ public class Conexion {
             Consulta = "CREATE TABLE IF NOT EXISTS Cliente("
                     + "Numero integer PRIMARY KEY AUTOINCREMENT, "
                     + "IP text NOT NULL, "
-                    + "Nombre text NOT NULL, "
+                    + "Nombre text NOT NULL UNIQUE, "
                     + "Contraseña text NOT NULL"
                     + ");";
             inicio = con.createStatement();
@@ -51,12 +51,26 @@ public class Conexion {
     }
     
     public void Guardar(Cliente cliente){
-        
+        try{
+            Consulta = "INSERT INTO Cliente ("
+                    + "IP,"
+                    + "Nombre,"
+                    + "Contraseña"
+                    + ")"
+                    + "VALUES (?,?,?)";
+            Control = con.prepareStatement(Consulta);
+            Control.setString(1, cliente.IP);
+            Control.setString(2,cliente.Nombre);
+            Control.setString(3,cliente.Contraseña);
+            Control.executeUpdate();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }  
     
-    public int Escaner (String IP,String Contraseña,int Numero){ ///1-usuario, 0-admin, 2-error
-        int result = 0;
-        return result;
+    public Cliente Buscar (){
+        Cliente cliente = new Cliente();
+        return cliente;
     }
     
     public Cliente Modificar (String Nombre,String Contraseña){
