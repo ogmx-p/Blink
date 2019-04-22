@@ -6,6 +6,7 @@
 package Forms.Forms;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,12 +14,10 @@ import java.awt.Color;
  */
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
+     public Cliente cliente;
     public Login() {
         initComponents();
-        Usuario = Conexion.Datos.BuscarClientesGuardados();
+        TextPrompt hold2=new TextPrompt("Usuario", Usuario);
         TextPrompt hold1=new TextPrompt("Contraseña", Contra);
     }
 
@@ -200,7 +199,11 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarActionPerformed
-
+        try{
+            cliente = Conexion.Datos.Buscar(Usuario.getText(), Contra.getText());
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_AceptarActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
