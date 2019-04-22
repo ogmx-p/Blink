@@ -6,6 +6,7 @@
 package Forms.Forms;
 
 import java.awt.Color;
+import java.net.InetAddress;
 import javax.swing.JOptionPane;
 
 /**
@@ -305,7 +306,7 @@ public class Reg extends javax.swing.JFrame {
     private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
     int x=evt.getXOnScreen();
     int y=evt.getYOnScreen();
-    
+
     this.setLocation(x-xx, y-xy);
     }//GEN-LAST:event_formMouseDragged
 
@@ -316,7 +317,17 @@ public class Reg extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelarActionPerformed
 
     private void AceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarActionPerformed
-
+        Cliente cliente = new Cliente();
+        try{
+            if ((Contraseña1.getText()).equals(Contraseña2.getText())&&Usuario.getText()!=null){
+                InetAddress direccion = InetAddress.getLocalHost();
+                cliente.Contraseña = Contraseña1.getText();
+                cliente.IP = direccion.getHostAddress();
+                cliente.Nombre = Usuario.getText();
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_AceptarActionPerformed
 
     private void AyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AyudaActionPerformed
@@ -363,7 +374,7 @@ public class Reg extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
