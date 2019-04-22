@@ -9,4 +9,5 @@ public class Cliente {
     public String IP;
     public String Nombre;
     public String Contraseña;
+    public boolean Error = false;
 }

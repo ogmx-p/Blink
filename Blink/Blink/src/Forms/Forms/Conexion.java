@@ -22,6 +22,7 @@ public class Conexion {
     }
     
     public void Inicio (){
+        boolean error = false;
         try {
             File Adress = new File ("C:\\Blink\\");
             Adress.mkdir();
@@ -32,10 +33,13 @@ public class Conexion {
             CrearTablas();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
+            error = true;
         }
+        
     }
     
-    private void CrearTablas (){
+    private boolean CrearTablas (){
+        boolean error = false;
         try{
             //se crea la tabla Cliente si no existe
             Consulta = "CREATE TABLE IF NOT EXISTS Cliente("
@@ -48,10 +52,13 @@ public class Conexion {
             inicio.execute(Consulta);
         }catch (SQLException e){
             JOptionPane.showMessageDialog(null, e);
+            error = true;
         }
+        return error;
     }
     
-    public void Guardar(Cliente cliente){
+    public boolean Guardar(Cliente cliente){
+        boolean error = false;
         try{
             Consulta = "INSERT INTO Cliente ("
                     + "IP,"
@@ -66,7 +73,9 @@ public class Conexion {
             Control.executeUpdate();
         }catch (SQLException e){
             JOptionPane.showMessageDialog(null, e);
+            error = true;
         }
+        return error;
     }  
     
     public Cliente Buscar (String nombre, String contraseña){
@@ -83,6 +92,7 @@ public class Conexion {
             cliente.numero = result.getInt("Numero");
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, e);
+            cliente.Error = true;
         }
         return cliente;
     }
@@ -103,7 +113,8 @@ public class Conexion {
         return result;
     }
     
-    public void Modificar (Cliente cliente){
+    public boolean Modificar (Cliente cliente){
+        boolean error = false;
         try{
             Consulta = "UPDATE Cliente SET "
                     + "Nombre = ?, "
@@ -118,7 +129,9 @@ public class Conexion {
             Control.executeUpdate();
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, e);
+            error = true;
         }
+        return error;
     }
     
     
