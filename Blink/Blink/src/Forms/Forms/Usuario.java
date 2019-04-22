@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 public class Usuario extends javax.swing.JFrame {
 
     int xx,xy;
-    boolean modo=false;
+    public static boolean modo=false;
     
     public Usuario() {
         initComponents();
@@ -147,6 +147,11 @@ public class Usuario extends javax.swing.JFrame {
         jButton1.setContentAreaFilled(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usuario.png"))); // NOI18N
         jButton2.setBorder(null);
@@ -259,15 +264,7 @@ public class Usuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DiurnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DiurnoMouseClicked
-    Panel1.setBackground(new java.awt.Color(50, 50, 50));
-    Panel2.setBackground(new java.awt.Color(80, 80, 80));
-    Busqueda_Usuario.setBackground(new java.awt.Color(50, 50, 50));
-    Busqueda_Usuario.setForeground(Color.white);
-    Seleccion_Usuario.setBackground(new java.awt.Color(50, 50, 50));
-    Seleccion_Usuario.setForeground(Color.white);
-    Nmb_Usuario.setForeground(Color.WHITE);
-    TXT1.setForeground(Color.WHITE);
-    modo=true;
+
     }//GEN-LAST:event_DiurnoMouseClicked
 
     private void NocturnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NocturnoMouseClicked
@@ -398,6 +395,12 @@ public class Usuario extends javax.swing.JFrame {
      }
     }
     }//GEN-LAST:event_Seleccion_UsuarioKeyTyped
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    Inicio vent=new Inicio();
+    vent.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
