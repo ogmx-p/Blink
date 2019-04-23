@@ -234,6 +234,11 @@ public class Login extends javax.swing.JFrame {
     private void AceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarActionPerformed
         try{
             cliente = Conexion.Datos.Buscar(Usuario.getText(), Contra.getText());
+            if (!cliente.Error){
+                Usuario x = new Usuario();
+                x.setVisible(true);
+                dispose();
+            }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
