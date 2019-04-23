@@ -241,7 +241,7 @@
                 </Property>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="Version:1.0.1&#xa;Proyecto Integrador.(POO)&#xa;Sierra Mu&#xf1;oz Ulises Octavio *Autor*&#xa;17100616&#xa;4&#xb0;D.&#xa;&#xa;Este programa esta realizado para ser un chat&#xa;sin otro fin m&#xe1;s que el de recabar experiencia&#xa;para la realizaci&#xf3;n de programas con base al&#xa;lenguaje de Programaci&#xf3;n Orientada a Objetos"/>
+                <Property name="text" type="java.lang.String" value="Version:1.1.0&#xa;Proyecto Integrador.(POO)&#xa;Sierra Mu&#xf1;oz Ulises Octavio *Autor*&#xa;17100616&#xa;4&#xb0;D.&#xa;&#xa;Este programa esta realizado para ser un chat&#xa;sin otro fin m&#xe1;s que el de recabar experiencia&#xa;para la realizaci&#xf3;n de programas con base al&#xa;lenguaje de Programaci&#xf3;n Orientada a Objetos"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>

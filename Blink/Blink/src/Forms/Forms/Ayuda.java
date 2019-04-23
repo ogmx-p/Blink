@@ -132,7 +132,7 @@ public class Ayuda extends javax.swing.JFrame {
         jTextArea2.setBackground(new java.awt.Color(204, 204, 204));
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
-        jTextArea2.setText("Version:1.0.1\nProyecto Integrador.(POO)\nSierra Muñoz Ulises Octavio *Autor*\n17100616\n4°D.\n\nEste programa esta realizado para ser un chat\nsin otro fin más que el de recabar experiencia\npara la realización de programas con base al\nlenguaje de Programación Orientada a Objetos");
+        jTextArea2.setText("Version:1.1.0\nProyecto Integrador.(POO)\nSierra Muñoz Ulises Octavio *Autor*\n17100616\n4°D.\n\nEste programa esta realizado para ser un chat\nsin otro fin más que el de recabar experiencia\npara la realización de programas con base al\nlenguaje de Programación Orientada a Objetos");
         jTextArea2.setBorder(null);
         jScrollPane2.setViewportView(jTextArea2);
 
