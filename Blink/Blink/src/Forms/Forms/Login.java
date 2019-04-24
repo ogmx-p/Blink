@@ -159,7 +159,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        Nocturno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Modo nocturno.png"))); // NOI18N
+        Nocturno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Modo diurno.png"))); // NOI18N
         Nocturno.setToolTipText("Modo Nocturno");
         Nocturno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Nocturno.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -168,7 +168,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        Diurno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Modo diurno.png"))); // NOI18N
+        Diurno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Modo nocturno.png"))); // NOI18N
         Diurno.setToolTipText("Modo Diurno");
         Diurno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Diurno.addMouseListener(new java.awt.event.MouseAdapter() {

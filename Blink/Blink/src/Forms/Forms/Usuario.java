@@ -14,8 +14,17 @@ public class Usuario extends javax.swing.JFrame {
     
     public Usuario() {
         initComponents();
+        Base();
         TextPrompt usu=new TextPrompt("Busqueda de usuario", Busqueda_Usuario);
         TextPrompt Susu=new TextPrompt("Selección de usuario", Seleccion_Usuario);
+    }
+    
+    private void Base()
+    {
+        Cliente Base=new Cliente();
+        String NombreUsuario=Base.Nombre;
+        
+        Nmb_Usuario.setText(NombreUsuario);
     }
 
 
@@ -80,7 +89,7 @@ public class Usuario extends javax.swing.JFrame {
         });
 
         Nmb_Usuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Nmb_Usuario.setText("Admin");
+        Nmb_Usuario.setText("Usuario");
 
         TXT1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         TXT1.setText("Usuario:");
