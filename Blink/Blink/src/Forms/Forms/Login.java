@@ -235,7 +235,7 @@ public class Login extends javax.swing.JFrame {
         try{
             cliente = Conexion.Datos.Buscar(Usuario.getText(), Contra.getText());
             if (!cliente.Error){
-                Usuario x = new Usuario();
+                Usuario x = new Usuario(cliente);
                 x.setVisible(true);
                 dispose();
             }

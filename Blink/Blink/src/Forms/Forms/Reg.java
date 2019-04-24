@@ -324,7 +324,7 @@ public class Reg extends javax.swing.JFrame {
                 cliente.Nombre = Usuario.getText();
                 
                 if (!Conexion.Datos.Guardar(cliente)){
-                    Usuario vent=new Usuario();
+                    Usuario vent=new Usuario(cliente);
                     vent.setVisible(true);
                     this.dispose();
                 }
