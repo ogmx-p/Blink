@@ -74,15 +74,20 @@ public class Usuario extends javax.swing.JFrame{
         Diurno = new javax.swing.JLabel();
         Nocturno2 = new javax.swing.JLabel();
         Diurno1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         MSJ = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         Busqueda = new javax.swing.JButton();
+        Panel3 = new javax.swing.JPanel();
+        Desconectar = new javax.swing.JButton();
         Conectar = new javax.swing.JButton();
+        EnviarMSJ = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        Conectado = new javax.swing.JLabel();
+        Conectado_Con = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -155,7 +160,57 @@ public class Usuario extends javax.swing.JFrame{
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Uslogout.png"))); // NOI18N
+        jComboBox1.setBackground(new java.awt.Color(230, 230, 230));
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBox1.setBorder(null);
+        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        MSJ.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        MSJ.setBorder(null);
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setBorder(null);
+        jTextArea1.setFocusable(false);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jScrollPane2.setViewportView(jScrollPane1);
+
+        Busqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Lupa.png"))); // NOI18N
+        Busqueda.setBorder(null);
+        Busqueda.setContentAreaFilled(false);
+        Busqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        Panel3.setBackground(new java.awt.Color(204, 204, 204));
+
+        Desconectar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Desconectar.png"))); // NOI18N
+        Desconectar.setBorder(null);
+        Desconectar.setContentAreaFilled(false);
+        Desconectar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Desconectar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesconectarActionPerformed(evt);
+            }
+        });
+
+        Conectar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Conectar.png"))); // NOI18N
+        Conectar.setBorder(null);
+        Conectar.setContentAreaFilled(false);
+        Conectar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Conectar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConectarActionPerformed(evt);
+            }
+        });
+
+        EnviarMSJ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Enviar MSJ.png"))); // NOI18N
+        EnviarMSJ.setBorder(null);
+        EnviarMSJ.setContentAreaFilled(false);
+        EnviarMSJ.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Uslogout2.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -166,36 +221,56 @@ public class Usuario extends javax.swing.JFrame{
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Usuario.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Usuario2.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.setContentAreaFilled(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Btnclick.png"))); // NOI18N
 
-        jComboBox1.setBackground(new java.awt.Color(230, 230, 230));
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setBorder(null);
-        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Conectado.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Conectado.setText("Conectado con:");
 
-        MSJ.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        MSJ.setBorder(null);
+        Conectado_Con.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Conectado_Con.setText("Desconectado");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jScrollPane2.setViewportView(jScrollPane1);
-
-        Busqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Lupa.png"))); // NOI18N
-        Busqueda.setBorder(null);
-        Busqueda.setContentAreaFilled(false);
-        Busqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        Conectar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Conectar.png"))); // NOI18N
-        Conectar.setBorder(null);
-        Conectar.setContentAreaFilled(false);
-        Conectar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        javax.swing.GroupLayout Panel3Layout = new javax.swing.GroupLayout(Panel3);
+        Panel3.setLayout(Panel3Layout);
+        Panel3Layout.setHorizontalGroup(
+            Panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel3Layout.createSequentialGroup()
+                        .addGap(0, 199, Short.MAX_VALUE)
+                        .addComponent(Desconectar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Conectar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(EnviarMSJ, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2))
+                    .addGroup(Panel3Layout.createSequentialGroup()
+                        .addComponent(Conectado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Conectado_Con, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        Panel3Layout.setVerticalGroup(
+            Panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel3Layout.createSequentialGroup()
+                .addGroup(Panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addGroup(Panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(Conectar)
+                        .addComponent(EnviarMSJ)
+                        .addComponent(jButton1))
+                    .addComponent(Desconectar, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Conectado_Con, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                    .addComponent(Conectado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
 
         javax.swing.GroupLayout Panel2Layout = new javax.swing.GroupLayout(Panel2);
         Panel2.setLayout(Panel2Layout);
@@ -222,18 +297,12 @@ public class Usuario extends javax.swing.JFrame{
                         .addGap(2, 2, 2)
                         .addComponent(Diurno, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Conectar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)
                         .addComponent(Busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Busqueda_Usuario))
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addComponent(Panel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Panel2Layout.setVerticalGroup(
             Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,19 +326,15 @@ public class Usuario extends javax.swing.JFrame{
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Busqueda_Usuario)
                             .addComponent(Diurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Busqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Conectar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Busqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(MSJ, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap())
+                .addComponent(MSJ, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout Panel1Layout = new javax.swing.GroupLayout(Panel1);
@@ -307,6 +372,7 @@ public class Usuario extends javax.swing.JFrame{
     private void NocturnoiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NocturnoiMouseClicked
     CambioColor JPanel1=new CambioColor(Panel1, 66, 66, 66);
     CambioColor JPanel2=new CambioColor(Panel2, 86, 86, 86);
+    CambioColor JPanel3=new CambioColor(Panel3, 75, 75, 75);
     CambioColor JBusqueda=new CambioColor(Busqueda_Usuario,66,66,66);
     CambioColor JBusquedaFuente=new CambioColor(Busqueda_Usuario, 2);
     CambioColor JMSJ=new CambioColor(MSJ,66,66,66);
@@ -317,6 +383,7 @@ public class Usuario extends javax.swing.JFrame{
     private void DiurnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DiurnoMouseClicked
     CambioColor JPanel1=new CambioColor(Panel1, 255, 255, 255);
     CambioColor JPanel2=new CambioColor(Panel2, 230, 230, 230);
+    CambioColor JPanel3=new CambioColor(Panel3, 204, 204, 204);
     CambioColor JBusqueda=new CambioColor(Busqueda_Usuario, 255,255,255);
     CambioColor JBusquedaFuente=new CambioColor(Busqueda_Usuario, 1);
     CambioColor JMSJ=new CambioColor(MSJ,255,255,255);
@@ -393,19 +460,33 @@ public class Usuario extends javax.swing.JFrame{
         Actulizar(Busqueda_Usuario.getText());
     }//GEN-LAST:event_jLabel1MousePressed
 
+    private void ConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConectarActionPerformed
+    String Usuario=(String) jComboBox1.getSelectedItem();
+    Conectado_Con.setText(Usuario);
+    }//GEN-LAST:event_ConectarActionPerformed
+
+    private void DesconectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesconectarActionPerformed
+    Conectado_Con.setText("Desconectado");
+    }//GEN-LAST:event_DesconectarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Busqueda;
     private javax.swing.JTextField Busqueda_Usuario;
+    private javax.swing.JLabel Conectado;
+    private javax.swing.JLabel Conectado_Con;
     private javax.swing.JButton Conectar;
+    private javax.swing.JButton Desconectar;
     private javax.swing.JLabel Diurno;
     private javax.swing.JLabel Diurno1;
+    private javax.swing.JButton EnviarMSJ;
     private javax.swing.JTextField MSJ;
     private javax.swing.JLabel Nmb_Usuario;
     private javax.swing.JLabel Nocturno2;
     private javax.swing.JLabel Nocturnoi;
     private javax.swing.JPanel Panel1;
     private javax.swing.JPanel Panel2;
+    private javax.swing.JPanel Panel3;
     private javax.swing.JLabel TXT1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
