@@ -57,7 +57,7 @@ public class Usuario extends javax.swing.JFrame {
 
     public void ModoNocturnoTecla()
     {
-        
+       
     }
 
     @SuppressWarnings("unchecked")
@@ -82,7 +82,7 @@ public class Usuario extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton3 = new javax.swing.JButton();
+        Busqueda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -196,9 +196,9 @@ public class Usuario extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jScrollPane1);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Lupa.png"))); // NOI18N
-        jButton3.setBorder(null);
-        jButton3.setContentAreaFilled(false);
+        Busqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Lupa.png"))); // NOI18N
+        Busqueda.setBorder(null);
+        Busqueda.setContentAreaFilled(false);
 
         javax.swing.GroupLayout Panel2Layout = new javax.swing.GroupLayout(Panel2);
         Panel2.setLayout(Panel2Layout);
@@ -227,7 +227,7 @@ public class Usuario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Conectar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Busqueda_Usuario))
                     .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -261,7 +261,7 @@ public class Usuario extends javax.swing.JFrame {
                             .addComponent(Busqueda_Usuario)
                             .addComponent(Conectar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Diurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Busqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -402,6 +402,7 @@ public class Usuario extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Busqueda;
     private javax.swing.JTextField Busqueda_Usuario;
     private javax.swing.JLabel Conectar;
     private javax.swing.JLabel Diurno;
@@ -415,7 +416,6 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JLabel TXT1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
