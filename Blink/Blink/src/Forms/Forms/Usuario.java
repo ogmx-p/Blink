@@ -21,6 +21,7 @@ public class Usuario extends javax.swing.JFrame {
         result = Conexion.Datos.BuscarClientesGuardados();
         jComboBox1.removeAllItems();
         result.forEach(x->{
+            if (!cliente.Nombre.equals(x))
             jComboBox1.addItem(x);
         });
         Nmb_Usuario.setText(cliente.Nombre);
