@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  *
  * @Pipo
  */
-public class Usuario extends javax.swing.JFrame {
+public class Usuario extends javax.swing.JFrame{
 
     int xx,xy;
     public static boolean modo=false;
@@ -57,7 +57,7 @@ public class Usuario extends javax.swing.JFrame {
 
     public void ModoNocturnoTecla()
     {
-       
+      
     }
 
     @SuppressWarnings("unchecked")
@@ -72,7 +72,6 @@ public class Usuario extends javax.swing.JFrame {
         TXT1 = new javax.swing.JLabel();
         Nocturnoi = new javax.swing.JLabel();
         Diurno = new javax.swing.JLabel();
-        Conectar = new javax.swing.JLabel();
         Nocturno2 = new javax.swing.JLabel();
         Diurno1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -83,6 +82,7 @@ public class Usuario extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         Busqueda = new javax.swing.JButton();
+        Conectar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -139,15 +139,6 @@ public class Usuario extends javax.swing.JFrame {
             }
         });
 
-        Conectar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Conectar.png"))); // NOI18N
-        Conectar.setToolTipText("Conectar Con El Usuario");
-        Conectar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Conectar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ConectarMouseClicked(evt);
-            }
-        });
-
         Nocturno2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Salir pequeño.png"))); // NOI18N
         Nocturno2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Nocturno2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -199,6 +190,12 @@ public class Usuario extends javax.swing.JFrame {
         Busqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Lupa.png"))); // NOI18N
         Busqueda.setBorder(null);
         Busqueda.setContentAreaFilled(false);
+        Busqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        Conectar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Conectar.png"))); // NOI18N
+        Conectar.setBorder(null);
+        Conectar.setContentAreaFilled(false);
+        Conectar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout Panel2Layout = new javax.swing.GroupLayout(Panel2);
         Panel2.setLayout(Panel2Layout);
@@ -225,8 +222,8 @@ public class Usuario extends javax.swing.JFrame {
                         .addGap(2, 2, 2)
                         .addComponent(Diurno, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Conectar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Conectar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
                         .addComponent(Busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Busqueda_Usuario))
@@ -259,9 +256,9 @@ public class Usuario extends javax.swing.JFrame {
                     .addGroup(Panel2Layout.createSequentialGroup()
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Busqueda_Usuario)
-                            .addComponent(Conectar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Diurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Busqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Busqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Conectar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -338,10 +335,6 @@ public class Usuario extends javax.swing.JFrame {
         this.setLocation(x-xx, y-xy);
     }//GEN-LAST:event_formMouseDragged
 
-    private void ConectarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConectarMouseClicked
-
-    }//GEN-LAST:event_ConectarMouseClicked
-
     private void Nocturno2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Nocturno2MouseClicked
     Salida salir=new Salida(this, true);
     salir.setVisible(true);
@@ -404,7 +397,7 @@ public class Usuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Busqueda;
     private javax.swing.JTextField Busqueda_Usuario;
-    private javax.swing.JLabel Conectar;
+    private javax.swing.JButton Conectar;
     private javax.swing.JLabel Diurno;
     private javax.swing.JLabel Diurno1;
     private javax.swing.JTextField MSJ;
@@ -422,4 +415,5 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+
 }
