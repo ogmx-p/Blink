@@ -1,6 +1,7 @@
 package Forms.Forms;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,10 +14,15 @@ public class Usuario extends javax.swing.JFrame {
     public static boolean modo=false;
     
     public Usuario(Cliente cliente) {
+        ArrayList<String> result;
         initComponents();
         Base();
         TextPrompt usu=new TextPrompt("Busqueda de usuario", Busqueda_Usuario);
-
+        result = Conexion.Datos.BuscarClientesGuardados();
+        jComboBox1.removeAllItems();
+        result.forEach(x->{
+            jComboBox1.addItem(x);
+        });
         Nmb_Usuario.setText(cliente.Nombre);
     }
     

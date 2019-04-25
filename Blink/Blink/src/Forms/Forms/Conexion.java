@@ -2,6 +2,7 @@
 package Forms.Forms;
 import java.io.File;
 import java.sql.*;
+import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 /**
@@ -97,16 +98,15 @@ public class Conexion {
         return cliente;
     }
     
-    public JComboBox<String> BuscarClientesGuardados (){
-        JComboBox<String> result = new JComboBox<>();
+    public ArrayList<String> BuscarClientesGuardados (){
+        ArrayList<String> result = new ArrayList<>();
         try{
             Consulta = "SELECT Nombre FROM Cliente";
             Control = con.prepareStatement(Consulta);
             ResultSet r = Control.executeQuery();
-            result.removeAllItems();
+            
             while (r.next()){
-                result.addItem(r.getString("Nombre"));
-                JOptionPane.showMessageDialog(null, "SE encontron un usuario");
+                result.add(r.getString("Nombre"));
             }
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e);
