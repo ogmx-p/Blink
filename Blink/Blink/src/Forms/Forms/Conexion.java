@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 public class Conexion {
     
     public static Conexion Datos = new Conexion();
-    private Connection con;
+    public static Connection con;
     private String URL = "jdbc:sqlite:C:\\Blink\\DataBase.db";
     private String Consulta;
     private PreparedStatement Control;
