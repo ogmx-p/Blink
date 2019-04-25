@@ -103,6 +103,7 @@ public class Conexion {
             Consulta = "SELECT Nombre FROM Cliente";
             Control = con.prepareStatement(Consulta);
             ResultSet r = Control.executeQuery();
+            result.removeAllItems();
             while (r.next()){
                 result.addItem(r.getString("Nombre"));
                 JOptionPane.showMessageDialog(null, "SE encontron un usuario");
