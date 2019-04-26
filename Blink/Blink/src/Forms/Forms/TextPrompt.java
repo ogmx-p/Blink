@@ -33,11 +33,7 @@ public class TextPrompt extends JLabel implements FocusListener, DocumentListene
 	 */
 	private static final long serialVersionUID = 1L;
 
-    TextPrompt(JTextField Nomb, JTextField NOM5) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    TextPrompt(TextPrompt Nombre, JTextField NOM5) {
+    TextPrompt(String escriba_su_mensaje_aqui, TextPrompt MSJ) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -67,7 +63,7 @@ public class TextPrompt extends JLabel implements FocusListener, DocumentListene
 //		setForeground(component.getForeground());
 		setForeground(Color.gray);
 //		setBorder(new EmptyBorder(component.getInsets()));
-		setHorizontalAlignment(JLabel.LEADING);
+		setHorizontalAlignment(JLabel.CENTER);
 
 		component.addFocusListener(this);
 		document.addDocumentListener(this);
