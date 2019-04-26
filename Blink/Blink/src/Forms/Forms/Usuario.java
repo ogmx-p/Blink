@@ -22,7 +22,6 @@ public class Usuario extends javax.swing.JFrame{
         TextPrompt usu=new TextPrompt("Busqueda de usuario", Busqueda_Usuario);
         TextPrompt Mensaje=new TextPrompt("Escriba su mensaje aqui", MSJ);
         Actulizar();
-        MSJ.setText("");
         Nmb_Usuario.setText(cliente.Nombre);
     }
 
@@ -78,7 +77,7 @@ public class Usuario extends javax.swing.JFrame{
         MSJ = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        Historial = new javax.swing.JTextArea();
         Busqueda = new javax.swing.JButton();
         Panel3 = new javax.swing.JPanel();
         Desconectar = new javax.swing.JButton();
@@ -169,12 +168,12 @@ public class Usuario extends javax.swing.JFrame{
         MSJ.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         MSJ.setBorder(null);
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(null);
-        jTextArea1.setFocusable(false);
-        jScrollPane1.setViewportView(jTextArea1);
+        Historial.setEditable(false);
+        Historial.setColumns(20);
+        Historial.setRows(5);
+        Historial.setBorder(null);
+        Historial.setFocusable(false);
+        jScrollPane1.setViewportView(Historial);
 
         jScrollPane2.setViewportView(jScrollPane1);
 
@@ -209,6 +208,11 @@ public class Usuario extends javax.swing.JFrame{
         EnviarMSJ.setBorder(null);
         EnviarMSJ.setContentAreaFilled(false);
         EnviarMSJ.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EnviarMSJ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EnviarMSJActionPerformed(evt);
+            }
+        });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Uslogout2.png"))); // NOI18N
         jButton1.setBorder(null);
@@ -469,6 +473,29 @@ public class Usuario extends javax.swing.JFrame{
     Conectado_Con.setText("Desconectado");
     }//GEN-LAST:event_DesconectarActionPerformed
 
+    private void EnviarMSJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarMSJActionPerformed
+    if(Conectado_Con.getText().equals("Desconectado"))
+    {
+     CambioColor Msj=new CambioColor(MSJ,255,117,102);
+     CambioColor MsjT=new CambioColor(MSJ, 4);
+     MSJ.setText("No esta conectado con nadie");
+    }
+    else if(MSJ.getText().equals("No esta conectado con nadie"))
+    {
+     CambioColor Msj=new CambioColor(MSJ,255,255,255);
+     CambioColor MsjT=new CambioColor(MSJ, 1);
+     MSJ.setText("");
+    }
+    else if(MSJ.getText().equals(""))
+    {
+     JOptionPane.showMessageDialog(rootPane, "Ingrese texto antes de enviar un mensaje");
+    }
+    else
+    {
+     Historial.append(MSJ.getText()+"\n");
+    }
+    }//GEN-LAST:event_EnviarMSJActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Busqueda;
@@ -480,6 +507,7 @@ public class Usuario extends javax.swing.JFrame{
     private javax.swing.JLabel Diurno;
     private javax.swing.JLabel Diurno1;
     private javax.swing.JButton EnviarMSJ;
+    private javax.swing.JTextArea Historial;
     private javax.swing.JTextField MSJ;
     private javax.swing.JLabel Nmb_Usuario;
     private javax.swing.JLabel Nocturno2;
@@ -494,7 +522,6 @@ public class Usuario extends javax.swing.JFrame{
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 
 }
