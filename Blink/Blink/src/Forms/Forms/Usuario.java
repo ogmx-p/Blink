@@ -2,7 +2,11 @@ package Forms.Forms;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.TimerTask;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 /**
  *
@@ -15,6 +19,8 @@ public class Usuario extends javax.swing.JFrame{
     public Cliente cliente;
 
     public Usuario(Cliente cliente) {
+        Status1.setVisible(false);
+        Status2.setVisible(false);
         ArrayList<String> result;
         this.cliente = cliente;
         initComponents();
@@ -87,6 +93,9 @@ public class Usuario extends javax.swing.JFrame{
         jButton2 = new javax.swing.JButton();
         Conectado = new javax.swing.JLabel();
         Conectado_Con = new javax.swing.JLabel();
+        Status = new javax.swing.JLabel();
+        Status1 = new javax.swing.JLabel();
+        Status2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -181,6 +190,11 @@ public class Usuario extends javax.swing.JFrame{
         Busqueda.setBorder(null);
         Busqueda.setContentAreaFilled(false);
         Busqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Busqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedaActionPerformed(evt);
+            }
+        });
 
         Panel3.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -237,6 +251,12 @@ public class Usuario extends javax.swing.JFrame{
         Conectado_Con.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Conectado_Con.setText("Desconectado");
 
+        Status.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Status espera.png"))); // NOI18N
+
+        Status1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Status Ok.png"))); // NOI18N
+
+        Status2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz_Avanzada/Status null.png"))); // NOI18N
+
         javax.swing.GroupLayout Panel3Layout = new javax.swing.GroupLayout(Panel3);
         Panel3.setLayout(Panel3Layout);
         Panel3Layout.setHorizontalGroup(
@@ -245,7 +265,12 @@ public class Usuario extends javax.swing.JFrame{
                 .addContainerGap()
                 .addGroup(Panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel3Layout.createSequentialGroup()
-                        .addGap(0, 199, Short.MAX_VALUE)
+                        .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Status1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Status2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Desconectar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Conectar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -258,18 +283,25 @@ public class Usuario extends javax.swing.JFrame{
                     .addGroup(Panel3Layout.createSequentialGroup()
                         .addComponent(Conectado)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Conectado_Con, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(Conectado_Con, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE))))
         );
         Panel3Layout.setVerticalGroup(
             Panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel3Layout.createSequentialGroup()
                 .addGroup(Panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addGroup(Panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(Conectar)
-                        .addComponent(EnviarMSJ)
-                        .addComponent(jButton1))
-                    .addComponent(Desconectar, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(Panel3Layout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(Conectar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EnviarMSJ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Desconectar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(Panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Status, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Status1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Status2, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Conectado_Con, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
@@ -465,6 +497,7 @@ public class Usuario extends javax.swing.JFrame{
     }//GEN-LAST:event_jLabel1MousePressed
 
     private void ConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConectarActionPerformed
+    Historial.setText(null);
     String Usuario=(String) jComboBox1.getSelectedItem();
     Conectado_Con.setText(Usuario);
     }//GEN-LAST:event_ConectarActionPerformed
@@ -496,6 +529,33 @@ public class Usuario extends javax.swing.JFrame{
     }
     }//GEN-LAST:event_EnviarMSJActionPerformed
 
+    private void BusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaActionPerformed
+    int canti=jComboBox1.getItemCount();
+    int x,pos;
+    for(x=0;x<=canti;x++)
+    {
+       pos=x+1;
+       if(jComboBox1.getItemAt(x).equals(Busqueda_Usuario.getText()))
+       {
+        jComboBox1.setSelectedItem(Busqueda_Usuario.getText());
+        Historial.append("Usuario Encontrado En El Espacio:" +pos +"\n");
+        Status1.setVisible(true);
+        Status.setVisible(false);
+        break;
+       }
+       else if(x==canti && jComboBox1.getItemAt(x)!=Busqueda_Usuario.getText())
+       {
+           
+       }
+       else
+       {
+        Historial.append("Usuario No Encontrado En El Espacio:" +pos +"\n");
+        Status2.setVisible(true);
+        Status.setVisible(false);
+       }
+    }       
+    }//GEN-LAST:event_BusquedaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Busqueda;
@@ -515,6 +575,9 @@ public class Usuario extends javax.swing.JFrame{
     private javax.swing.JPanel Panel1;
     private javax.swing.JPanel Panel2;
     private javax.swing.JPanel Panel3;
+    private javax.swing.JLabel Status;
+    private javax.swing.JLabel Status1;
+    private javax.swing.JLabel Status2;
     private javax.swing.JLabel TXT1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -523,5 +586,9 @@ public class Usuario extends javax.swing.JFrame{
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
+    private Object indexOf(String Cliente_Busqueda) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
