@@ -320,7 +320,7 @@ public class Reg extends javax.swing.JFrame {
             if ((Contraseña1.getText()).equals(Contraseña2.getText())&&Usuario.getText()!=null){
                 InetAddress direccion = InetAddress.getLocalHost();
                 cliente.Contraseña = Contraseña1.getText();
-                cliente.IP = direccion.getHostAddress();
+                cliente.MAC = direccion.getHostAddress();
                 cliente.Nombre = Usuario.getText();
                 
                 if (!Conexion.Datos.Guardar(cliente)){

@@ -45,7 +45,7 @@ public class Conexion {
             //se crea la tabla Cliente si no existe
             Consulta = "CREATE TABLE IF NOT EXISTS Cliente("
                     + "Numero integer PRIMARY KEY AUTOINCREMENT, "
-                    + "IP text NOT NULL, "
+                    + "MAC text NOT NULL, "
                     + "Nombre text NOT NULL UNIQUE, "
                     + "Contraseña text NOT NULL"
                     + ");";
@@ -62,13 +62,13 @@ public class Conexion {
         boolean error = false;
         try{
             Consulta = "INSERT INTO Cliente ("
-                    + "IP,"
+                    + "MAC,"
                     + "Nombre,"
                     + "Contraseña"
                     + ")"
                     + "VALUES (?,?,?)";
             Control = con.prepareStatement(Consulta);
-            Control.setString(1, cliente.IP);
+            Control.setString(1, cliente.MAC);
             Control.setString(2,cliente.Nombre);
             Control.setString(3,cliente.Contraseña);
             Control.executeUpdate();
@@ -89,7 +89,7 @@ public class Conexion {
             ResultSet result = Control.executeQuery();
             cliente.Nombre = result.getString("Nombre");
             cliente.Contraseña = result.getString("Contraseña");
-            cliente.IP = result.getString("IP");
+            cliente.MAC = result.getString("MAC");
             cliente.numero = result.getInt("Numero");
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, e);
@@ -120,12 +120,12 @@ public class Conexion {
             Consulta = "UPDATE Cliente SET "
                     + "Nombre = ?, "
                     + "Contraseña = ?, "
-                    + "IP = ? "
+                    + "MAC = ? "
                     + "WHERE Numero = ?";
             Control = con.prepareStatement(Consulta);
             Control.setString(1, cliente.Nombre);
             Control.setString(2, cliente.Contraseña);
-            Control.setString(3, cliente.IP);
+            Control.setString(3, cliente.MAC);
             Control.setInt(4, cliente.numero);
             Control.executeUpdate();
         }catch(SQLException e){
